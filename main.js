@@ -85,7 +85,7 @@ function showUserGithub(user) {
 }
 
 function getUserReposGithub(userName) {
-    fetch('https://api.github.com/users/' + userName + '/repos')
+    fetch('https://fake-github.herokuapp.com/api/' + userName + '/repos')
         .then(function (resultado) {
             resultado.json().then(function (data) {
                 console.log('Repositories Data:', data);
