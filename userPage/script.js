@@ -3,7 +3,7 @@ console.log(document.location.search);
 
 
 function getUserGithub(userName) {
-    fetch('https://fake-github.herokuapp.com/api/' + userName)
+    fetch('https://fake-github.herokuapp.com/api/search' + userName)
         .then(function (resultado) {
             resultado.json().then(function (data) {
                 console.log('User Data:', data);
