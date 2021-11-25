@@ -54,7 +54,9 @@ function pegarUsuario(name, userName) {
 
     columnName.innerText = name;
     columnUserName.innerText = userName;
-    a.innerText = 'Verificar'
+    a.innerText = 'Verificar';
+    a.style.color = 'black';
+    a.style.textDecoration = 'none';
     a.href='./userPage/index.html?' + userName;
 
     row.appendChild(columnName);
