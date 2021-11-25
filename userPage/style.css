@@ -1,0 +1,23 @@
+#name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#repos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
