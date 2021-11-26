@@ -4,9 +4,3 @@ th,
 td {
     border: black 1px solid;
 }
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
