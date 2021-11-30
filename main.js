@@ -22,10 +22,7 @@ const listUser = [
 ];
 
 
-let botaoCadastro = document.createElement('button');
-document.body.appendChild(botaoCadastro);
-botaoCadastro.onclick = clickButtonRegisteryPerson;
-botaoCadastro.innerText = "Cadastrar Pessoa";
+
 
 
 
@@ -46,6 +43,11 @@ function table() {
     document.body.appendChild(table);
 }
 table();
+
+let botaoCadastro = document.createElement('button');
+document.body.appendChild(botaoCadastro);
+botaoCadastro.onclick = clickButtonRegisteryPerson;
+botaoCadastro.innerText = "Cadastrar Pessoa";
 
 function pegarUsuario(name, userName) {
     const row = document.createElement('li');
