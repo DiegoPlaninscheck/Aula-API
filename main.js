@@ -21,19 +21,21 @@ const listUser = [
     { name: 'Otavio Matheus Neves', userName: 'otavionvs' }
 ];
 
+
+let botaoCadastro = document.createElement('button');
+document.body.appendChild(botaoCadastro);
+botaoCadastro.onclick = clickButtonRegisteryPerson;
+botaoCadastro.innerText = "Cadastrar Pessoa";
+
+
+
 function table() {
-    const table = document.createElement('table');
-    const row = document.createElement('tr');
-    const columnName = document.createElement('th');
-    const columnUserName = document.createElement('th');
-
-    columnName.innerText = 'Nome';
-    columnUserName.innerText = 'UserName';
-
-    row.appendChild(columnName);
-    row.appendChild(columnUserName);
-    table.appendChild(row);
-
+    let checarTabela = document.querySelector('ul');
+    if(checarTabela){
+        checarTabela.remove();
+    }
+    let table = document.createElement('ul');
+    
     listUser.forEach(function (element) {
         const linha = pegarUsuario(
             element.name,
@@ -46,14 +48,16 @@ function table() {
 table();
 
 function pegarUsuario(name, userName) {
-    const row = document.createElement('tr');
-    const columnName = document.createElement('td');
-    const columnUserName = document.createElement('td');
+    const row = document.createElement('li');
+    row.id = 'linha';
+    const columnName = document.createElement('div');
+    const columnUserName = document.createElement('div');
     const buttonUsuario = document.createElement('button');
     const a = document.createElement('a');
 
-    columnName.innerText = name;
-    columnUserName.innerText = userName;
+    columnName.id = 'nome'
+    columnName.innerText = "Nome: " + name;
+    columnUserName.innerText = "Username: " + userName;
     a.innerText = 'Verificar';
     a.style.color = 'black';
     a.style.textDecoration = 'none';
@@ -65,14 +69,6 @@ function pegarUsuario(name, userName) {
     buttonUsuario.appendChild(a);
     return row;
 }
-
-
-
-
-let botaoCadastro = document.createElement('button');
-document.body.appendChild(botaoCadastro);
-botaoCadastro.onclick = clickButtonRegisteryPerson;
-botaoCadastro.innerText = "Cadastrar Pessoa";
 
 function clickButtonRegisteryPerson() {
     const modal = createModal();
@@ -192,6 +188,32 @@ function registeryPerson(name,  userName) {
          userName:  userName,
     }
 
-    listaUsuarios.push(person);
-    criarTabela();
+    listUser.push(person);
+    table();
 }
+
+// let input = document.createElement("input");
+// document.body.appendChild(input);
+// input.id = 'filtro';
+
+
+// function myFunction() {
+//     var input, filter, ul, li, a, i, txtValue;
+//     input = document.getElementById('filtro');
+//     filter = input.value;
+//     ul = document.querySelector("ul");
+//     li = ul.getElementsByTagName('li');
+
+//     for (i = 0; i < li.length; i++) {
+//       a = li[i].getElementById("nome");
+//       txtValue = a.innerText;
+//       console.log(a, txtValue);
+//       if (txtValue.indexOf(filter) > -1) {
+//         li[i].style.display = "";
+//       } else {
+//         li[i].style.display = "none";
+//       }
+//     }
+//   }
+
+// input.onkeyup = myFunction;
